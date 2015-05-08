@@ -12,6 +12,7 @@ public class GameMenu{
 	public String title;
 	public ArrayList<String> buttons;
 	public ArrayList<int[]> bounds;
+	public final Color titleColor=Color.YELLOW;
 
 	public GameMenu(String ttl, String[] btns){
 		title=ttl;
@@ -31,11 +32,11 @@ public class GameMenu{
 		for (int x=10;x< Board.B_WIDTH;x+=60) g.drawImage(alienImg,x,10,ob);
 	}
 
-	public void addTitle(Graphics g){
+	public void addTitle(Graphics g, Color color){
 		Font titleFnt=new Font("arial", Font.BOLD, 40);
 		FontMetrics metr=g.getFontMetrics(titleFnt);
 		g.setFont(titleFnt);
-		g.setColor(Color.GREEN);
+		g.setColor(color);
 		g.drawString(title,(Board.B_WIDTH-metr.stringWidth(title))/2, Board.B_HEIGHT/4);
 	}
 
